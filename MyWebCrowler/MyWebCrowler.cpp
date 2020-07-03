@@ -12,15 +12,9 @@ int main()
 
     OpenWebPage owp;
 
-    string ip("192.2.3.4");
-
-    RegularResolveHostName resolve;
-
     string str = "www.google.com";
 
-    str = resolve.Resolve(str);
-
-    //owp.OpenPage(ip);
+    owp.OpenPage(str);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

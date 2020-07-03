@@ -12,6 +12,7 @@
 #include <ws2tcpip.h>
 
 #include "OpenWebPage.h"
+#include "ResolveHostName.h"
 
 #pragma comment(lib, "Ws2_32.lib")
 
@@ -34,6 +35,10 @@ void OpenWebPage::OpenPage(string& url)
         WSACleanup();
         return;
     }
+
+    RegularResolveHostName resolve;
+
+    url = resolve.Resolve(url);
 
     int ip;
 
