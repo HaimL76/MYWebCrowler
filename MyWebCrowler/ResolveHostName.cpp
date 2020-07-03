@@ -24,7 +24,7 @@ string& RegularResolveHostName::Resolve(string& hostName)
                 ostringstream oss;
 
                 copy(addr, addr + 4, std::ostream_iterator<unsigned int>(oss, "."));
-                hostName.append(oss.str());
+                hostName.append(oss.str()).erase(hostName.length() - 1, 1);
             }
         }
     }
