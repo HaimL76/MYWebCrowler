@@ -147,11 +147,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="InitializeWinsock.cpp" />
     <ClCompile Include="MyWebCrowler.cpp" />
     <ClCompile Include="OpenWebPage.cpp" />
+    <ClCompile Include="ResolveHostName.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="InitializeWinsock.h" />
     <ClInclude Include="OpenWebPage.h" />
+    <ClInclude Include="ResolveHostName.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

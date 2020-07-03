@@ -4,6 +4,7 @@
 #include <iostream>
 
 #include "OpenWebPage.h"
+#include "ResolveHostName.h"
 
 int main()
 {
@@ -13,7 +14,13 @@ int main()
 
     string ip("192.2.3.4");
 
-    owp.OpenPage(ip);
+    RegularResolveHostName resolve;
+
+    string str = "www.google.com";
+
+    str = resolve.Resolve(str);
+
+    //owp.OpenPage(ip);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
