@@ -1,7 +1,10 @@
 #include "ResolveHostName.h"
 #include "InitializeWinsock.h"
-#include <iostream>
 #include <iterator>
+#include <iostream>
+#include <sstream>
+
+using namespace std;
 
 string& RegularResolveHostName::Resolve(string& hostName)
 {
@@ -13,6 +16,16 @@ string& RegularResolveHostName::Resolve(string& hostName)
         if (h != 0 && h->h_addr_list)
         {
             unsigned char* addr = reinterpret_cast<unsigned char*>(h->h_addr_list[0]);
+
+            hostName.clear();
+
+            if (addr != 0) 
+            {
+                ostringstream oss;
+
+                copy(addr, addr + 4, std::ostream_iterator<unsigned int>(oss, "."));
+                hostName.append(oss.str());
+            }
         }
     }
     catch (std::exception const& exc) {
