@@ -60,6 +60,25 @@ void OpenWebPage::OpenPage(string& url)
     }
 
     cout << "connected!" << endl;
+
+    //HTTP GET
+    string get_http = "GET / HTTP/1.1\r\nHost: " + url + "\r\nConnection: close\r\n\r\n";
+
+    const char* str = get_http.c_str();
+
+    result = send(socketfd, str, strlen(str), 0);
+
+    char buff[1000];
+
+    string response;
+
+    while (result > 0)
+    {
+        result = recv(socketfd, buff, sizeof(buff), 0);
+
+        if (result > 0)
+            response.append(buff);
+    }
 }
 
 

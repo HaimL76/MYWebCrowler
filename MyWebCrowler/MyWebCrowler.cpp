@@ -12,7 +12,7 @@ int main()
 
     OpenWebPage owp;
 
-    string str = "www.google.com";
+    string str = "www.news.com";
 
     owp.OpenPage(str);
 }
