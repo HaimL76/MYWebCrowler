@@ -12,7 +12,9 @@ int main()
 
     OpenWebPage owp;
 
-    string str = "www.news.com";
+    //string str = "www.news.com";
+
+    string str = "www.tapuz.co.il";
 
     while (true)
         owp.OpenPage(str);

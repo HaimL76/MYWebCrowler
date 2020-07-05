@@ -61,8 +61,14 @@ void OpenWebPage::OpenPage(string& url)
 
     cout << "connected!" << endl;
 
+    string rec = "תפוז אנשים.html";
+    //rec = "/";
+
     //HTTP GET
-    string get_http = "GET / HTTP/1.1\r\nHost: " + url + "\r\nConnection: close\r\n\r\n";
+    //string get_http = "GET / HTTP/1.1\r\nHost: " + url + "\r\nConnection: close\r\n\r\n";
+    string get_http = "GET " + rec + " HTTP/1.1\r\nHost: " + url + "\r\nConnection: close\r\n\r\n";
+
+    cout << get_http << endl;
 
     const char* str = get_http.c_str();
 
