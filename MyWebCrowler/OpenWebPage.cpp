@@ -38,11 +38,11 @@ void OpenWebPage::OpenPage(string& url)
 
     RegularResolveHostName resolve;
 
-    url = resolve.Resolve(url);
+    string& strIp = resolve.Resolve(url);
 
     int ip;
 
-    inet_pton(AF_INET, url.c_str(), &ip);
+    inet_pton(AF_INET, strIp.c_str(), &ip);
 
     int port = DefaultPort;
 

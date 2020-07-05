@@ -14,7 +14,8 @@ int main()
 
     string str = "www.news.com";
 
-    owp.OpenPage(str);
+    while (true)
+        owp.OpenPage(str);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
