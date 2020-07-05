@@ -76,9 +76,15 @@ void OpenWebPage::OpenPage(string& url)
     {
         result = recv(socketfd, buff, sizeof(buff), 0);
 
-        if (result > 0)
+        if (result > 0) 
+        {
+            buff[result] = '\0';
+
             response.append(buff);
+        }
     }
+
+    cout << response;
 }
 
 
