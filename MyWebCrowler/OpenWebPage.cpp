@@ -74,11 +74,14 @@ void OpenWebPage::OpenPage(string& url)
 
     while (result > 0)
     {
-        result = recv(socketfd, buff, sizeof(buff), 0);
+        int size = sizeof(buff);
+
+        result = recv(socketfd, buff, size, 0);
 
         if (result > 0) 
         {
-            buff[result] = '\0';
+            if (result < size)
+                buff[result] = '\0';
 
             response.append(buff);
         }
